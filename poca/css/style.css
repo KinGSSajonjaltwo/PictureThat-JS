@@ -17,23 +17,23 @@ body{
 }
 
 body{
-  display: flex;
+  display: grid;
   justify-content: center;
   align-items: center;
   background-color: #FFF0ED;
 }
 
 .stack {
-  width: 87%;
-  height: 63%;
+  width: 500px;
+  height: 500px;
   position: relative;
 }
 
 
 .card{
   background-color: #6E6E6D;
-  width: 100%;
-  min-height: 100%;
+  width: 300px;
+  min-height: 360px;
   position: absolute;
 
   /* 좌측 상단 기준 이동이라 왼쪽 오른쪽 50%씩 card의 절반씩 이동 */
@@ -72,14 +72,50 @@ body{
   transform: translate(-50%, var(--y)) scale(1.05);
 }
 
-
-@keyframes swap {
+/* 모바일웹에서 버벅거림이 너무 심함 */
+@keyframes swapNext {
   50% {
-    transform: translate(-50%, calc(var(--y) - 250px)) scale(0.85) rotate(-5deg);
+    transform: translate(-50%, calc(-170%)) scale(0.85);
     animation-timing-function: ease-in;
   }
   100% {
     transform: translate(-50%, calc(var(--y) - 15px)) scale(0.85);
     z-index: -1;
   }
+}
+
+@keyframes swapPrev {
+  50% {
+    transform: translate(-50%, calc(-170%)) scale(0.9);
+    animation-timing-function: ease-in;
+  }
+  100% {
+    transform: translate(-50%, var(--y)) scale(1.06);
+    z-index: +100;
+  }
+}
+
+@keyframes swapBack {
+  100% {
+    transform: translate(-50%, calc(-50%)) scale(1);
+  }
+}
+
+
+.control{
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.controlBtn{
+  width: 25%;
+  height: 50px;
+  background-color: #6E6E6D;
+  color: #FAD0C9;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
 }
