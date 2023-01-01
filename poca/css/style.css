@@ -39,7 +39,7 @@ body{
   /* 좌측 상단 기준 이동이라 왼쪽 오른쪽 50%씩 card의 절반씩 이동 */
   top: 50%;
   left: 50%;
-  /* transform: translate(-50%, -50%); */
+  transform: translate(-50%, -50%);
   display: grid;
   justify-content: center;
   align-items: center;
@@ -97,6 +97,7 @@ body{
 
 @keyframes swapBack {
   100% {
+    animation-timing-function: ease-in;
     transform: translate(-50%, calc(-50%)) scale(1);
   }
 }

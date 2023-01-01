@@ -9,7 +9,7 @@ function swap(e){
   //가장 앞에 있는 card : card:last-child  
   let card = document.querySelector(".card:last-child");
   if(e.target !== card) return;
-  card.style.animation = "swapNext 400ms forwards";
+  card.style.animation = "swapNext 400ms";
 
   setTimeout(() => {
     card.style.animation = "";
